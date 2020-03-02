@@ -1,22 +1,19 @@
-let money=prompt("СКОЛЬКА ТЫ ЗАРАБАТЫВАЕШЬ?","");
-   console.log(money);
-let data=prompt("Введите время и дату в формате DD.MM.YYYY!", "");
-   console.log(data);
-let rashodi=prompt("Введите обязательную статью расходов в этом месяце","");
-   console.log(rashodi);
-let cost=prompt("Во сколько обойдется");
-   console.log(cost);
-let income = [];
-let expenses = {
-      "ответ на первый вопрос" : rashodi,
-      "ответ на второй вопрос" : cost,
-      }
+let money=prompt("СКОЛЬКА ТЫ ЗАРАБАТЫВАЕШЬ?",""),
+    data=prompt("Введите время и дату в формате DD.MM.YYYY!", "");
+
 let AppData = {
-          "бюджет" : money,
-          "Данные времени" : data,
-          "обязательные расходы" : expenses,
-          "доп доход" : income,
-          "savings" : false,
+           budget: money,
+           timeData: data,
+           expenses: {},
+           optionalExpenses: {},
+           income: [],
+           savings: false,
+};
+
+for (let i = 0; i < 2; i++) {
+   let a = prompt("Введите обязательную статью расходов в этом месяце"),
+       b = prompt("Во сколько обойдется");
+       AppData.expenses[a] = b;
 }
 
 alert(money/30);
